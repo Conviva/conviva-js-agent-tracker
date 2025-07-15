@@ -12,17 +12,22 @@ Use Conviva JavaScript Agent SDK to auto-collect events and track application-sp
 ## Quick Start
 
 ### 1. Installation
+<!--self-serve[NPM/Yarn]-->
 
 - Install The Conviva JavaScript Agent SDK using either **npm** or **yarn**:
+<!-- :::code-tabs[NPM,Yarn] -->
 
-```plaintext
+```NPM
 npm install @convivainc/conviva-js-agent-tracker
 ```
 
-```plaintext
+```Yarn
 yarn add @convivainc/conviva-js-agent-tracker
 ```
+<!-- ::: -->
 
+**Note**: For script-based integrations, refer [Conviva JS Script ECO SDK](https://github.com/Conviva/conviva-js-script-appanalytics) for guidelines.
+ <!--eof-self-serve--> 
 
 ### 2. Initialization
 
@@ -42,15 +47,15 @@ import {
 
 ```js
 convivaAppTracker({
-	appId: 'YOUR_APP_NAME_AS_STRING',
-	convivaCustomerKey: 'CONVIVA_ACCOUNT_CUSTOMER_KEY',
+	appId: 'YOUR_APP_NAME',
+	convivaCustomerKey: 'YOUR_CUSTOMER_KEY',
 	appVersion: '1.1.0',
 });
 ```
 
-**appId** - A string value that uniquely identifies your app across platforms. For example: `"WEB App"`, `"LGTV App"`.
+**YOUR_APP_NAME** - A string value that uniquely identifies your app across platforms. For example: `"WEB App"`, `"LGTV App"`.
 
-**convivaCustomerKey** - A string to identify a specific customer account. Use different keys for dev and prod. Find them in [Pulse](https://pulse.conviva.com/app/profile/applications) under My Profile (_Conviva login required_).
+**YOUR_CUSTOMER_KEY** - A string to identify a specific customer account. Use different keys for dev and prod. Find them in [Pulse](https://pulse.conviva.com/app/profile/applications) under My Profile (_Conviva login required_).
 
 **appVersion** - Set app version in string format.
 
@@ -64,6 +69,16 @@ setUserId('replace_me_by_the_userId');
 
 ### 4. Report Page View
 
+trackPageView() should be called after the page is considered "loaded" by your application—that is, when content is rendered and ready for user interaction. Avoid calling it too early (e.g., before the main content or layout is visible), as this may result in incomplete timing data.
+
+What defines a "page change"?
+This depends on your app type:
+
+For MPAs: Every full page reload is a new page.
+For SPAs: A new page is usually identified by URL path or route changes.
+
+Developers should trigger pageview() based on what they define as a meaningful navigation or view transition in their application.
+
 By default, when `trackPageView()` is called, the _Page Title_ is set using `document.title`. However, you can override this by passing a custom title in the `trackPageView()` API:
 
 ```js
@@ -73,6 +88,7 @@ trackPageView();
 // Pass a custom Page Title
 trackPageView({ title: 'Custom Page Title' });
 ```
+**Note**: The Web (JS/React) SDK does not collect page views if the trackPageView() API is not explicitly called during a navigation event. As a result, corresponding metrics (such as Page Views, Avg Perceived Page Load Time, Avg Largest Contentful Paint Time) will be missing from the Pulse dashboard. Conviva does not support auto-collection of missing page views.
 
 After steps 1–4, verify [auto-collected events](#auto-collected-events) in the [validation dashboard](https://pulse.conviva.com/app/appmanager/ecoIntegration/validation) . (_Conviva login required_)
 
@@ -102,6 +118,7 @@ cleanup();
 ## More Features
 
 <details>
+<!--self-serve-custom-event-->
 <summary><b>Track Custom Event</b></summary>
     
 Use the **trackCustomEvent()** API to track all kinds of events. This API provides 2 fields to describe the tracked events:
@@ -124,10 +141,11 @@ trackCustomEvent({
 	data: customData,
 });
 ```
-
+<!--eof-self-serve-custom-event--> 
 </details>
 
 <details>
+<!--self-serve-custom-tags-->
 <summary><b>Set Custom Tags</b></summary>
 
 Custom Tags are global tags applied to all events and persist throughout the application lifespan, or until they are removed.
@@ -150,7 +168,7 @@ import { unsetCustomTags } from '@convivainc/conviva-js-agent-tracker';
 let customTagsData = ['tagKey2', 'tagKey3'];
 unsetCustomTags(customTagsData);
 ```
-
+<!--eof-self-serve-custom-tags--> 
 </details>
 
 <details>
@@ -444,9 +462,9 @@ This feature supports tracking network requests triggered within the application
 
 Collected only when:
 
-- Size is < 10KB and content-length is available.
+- Size is < 10KB.
 - Response body is type JSON.
-- Content-type is `"json"`, `"text/plain"`, `"text/javascript"` or `"application/javascript"`.
+- Content-type contains `"json"` or equals any of `"text/plain"`, `"text/javascript"`, `"application/javascript"`, `"text/html"`
 - Response Type is not "opaque"
 
 **Request and Response Header Collection:**
