@@ -13,7 +13,7 @@ Use Conviva JavaScript ECO SDK to auto-collect events and track application-spec
 
 ### 1. Installation
 
-- Install the Conviva JavaScript ECO SDK using either **npm** or **yarn**:
+- Install The Conviva JavaScript Agent SDK using either **npm** or **yarn**:
 
 ```plaintext
 npm install @convivainc/conviva-js-agent-tracker
@@ -36,7 +36,7 @@ import {
 } from '@convivainc/conviva-js-appanalytics';
 ```
 
-- Initialize the Conviva JavaScript ECO SDK:
+- Initialize The Conviva JavaScript Agent SDK:
 
 **Note**: It is recommended to initialize the tracker as early **as possible** during the DOM load sequence, such as in `App.js`.
 
@@ -184,7 +184,7 @@ Use Cases:
 - Synchronizing Client ID between a mobile app and WebView.
 - Synchronizing Client ID across subdomains.
 
-**Note**: The Conviva JavaScript ECO SDK utilizes **local storage** to cache some data.
+**Note**: The Conviva JavaScript Agent SDK utilizes **local storage** to cache some data.
 
 - `getClientId()` – Retrieves the current Client ID
 - `setClientId(clientId)` – Sets a specific Client ID
@@ -395,6 +395,16 @@ Conviva automatically collects rich set of app performance metrics through app e
 To learn about the default metrics for analyzing the native and web applications performance, such as App Crashes, Avg Screen Load Time, and Page Loads, refer to the [App Experience Metrics](https://pulse.conviva.com/learning-center/content/eco/eco_metrics.html) page in the Learning Center.
 
 </details>
+
+### Auto-collection of SSE Events (EventStream via Fetch API)
+
+The Conviva JavaScript Agent SDK supports auto-collection of Server-Sent Events (SSE) when they are delivered as an `eventstream` response via the Fetch API. This enables tracking of real-time server-push events in modern web applications.
+
+- **Current Coverage:**
+  - At present, only events of type `conversation_message` are automatically collected and tracked.
+  - Additional SSE event types may be supported in future releases.
+
+No extra configuration is required—if your application receives SSEs as an `eventstream` through Fetch, supported events will be tracked automatically.
 
 ### Limitations
 
