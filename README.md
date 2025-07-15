@@ -1,6 +1,6 @@
 # Conviva JavaScript Agent SDK
 
-Use Conviva JavaScript ECO SDK to auto-collect events and track application-specific events and state changes.
+Use Conviva JavaScript Agent SDK to auto-collect events and track application-specific events and state changes.
 
 **Table of Contents**
 
@@ -177,7 +177,7 @@ try {
 <details>
 <summary><b>Client ID Synchronization</b></summary>
 
-When using multiple Conviva JavaScript ECO SDK instances across different environments (e.g., subdomains of the same customer or mobile apps embedding webviews), the Client ID may not be shared automatically. To ensure consistency, the SDK provides the following advanced APIs for manual synchronization. These APIs are intended for developers who require fine-grained control over Client ID management across multiple instances.
+When using multiple Conviva JavaScript Agent SDK instances across different environments (e.g., subdomains of the same customer or mobile apps embedding webviews), the Client ID may not be shared automatically. To ensure consistency, the SDK provides the following advanced APIs for manual synchronization. These APIs are intended for developers who require fine-grained control over Client ID management across multiple instances.
 
 Use Cases:
 
@@ -421,9 +421,9 @@ The collection of all types of clicks is automatically supported, including thos
 **Migration of Pulse dimensions for clicks**
 
 Starting with version [v1.1.2](https://github.com/Conviva/conviva-js-appanalytics/releases/tag/v1.1.2) of the SDK, the attribute keys for click events have been updated.
-If you are using v1.1.1 or earlier and currently mapping `elementText`, you must update your configuration when upgrading to v1.1.2 or later. Specifically, update the mapping in [ECO Activation](https://pulse.conviva.com/app/activation/home) by mapping `elementText` to `text`, then redeploy to apply the changes.
+If you are using v1.1.1 or earlier and currently mapping `elementText`, you must update your configuration when upgrading to v1.1.2 or later. Specifically, update the mapping in [DPI Activation](https://pulse.conviva.com/app/activation/home) by mapping `elementText` to `text`, then redeploy to apply the changes.
 
-To ensure metrics reflect the updates, please review and update your event/metric mappings in [ECO Activation](https://pulse.conviva.com/app/activation/home) if you are using any of the following attributes:
+To ensure metrics reflect the updates, please review and update your event/metric mappings in [DPI Activation](https://pulse.conviva.com/app/activation/home) if you are using any of the following attributes:
 | <=v1.1.1 | >=v1.1.2 |
 |--------------------------------|--------------------------------|
 | elementType | elementType |
@@ -465,4 +465,4 @@ Collected only when:
 
 ## FAQ
 
-[ECO Integration FAQ](https://pulse.conviva.com/learning-center/content/sensor_developer_center/tools/eco_integration/eco_integration_faq.htm)
+[DPI Integration FAQ](https://pulse.conviva.com/learning-center/content/sensor_developer_center/tools/eco_integration/eco_integration_faq.htm)
