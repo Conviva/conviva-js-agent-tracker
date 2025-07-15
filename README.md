@@ -90,7 +90,7 @@ The `cleanup()` API is used to completely remove all Conviva tracker listeners, 
 **Usage Example:**
 
 ```js
-import { cleanup } from '@convivainc/conviva-js-appanalytics';
+import { cleanup } from '@convivainc/conviva-js-agent-tracker';
 
 // Remove all Conviva tracker listeners and resources
 cleanup();
