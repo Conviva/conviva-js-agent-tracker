@@ -33,7 +33,7 @@ import {
 	convivaAppTracker,
 	setUserId,
 	trackPageView,
-} from '@convivainc/conviva-js-appanalytics';
+} from '@convivainc/conviva-js-agent-tracker';
 ```
 
 - Initialize The Conviva JavaScript Agent SDK:
@@ -111,7 +111,7 @@ Use the **trackCustomEvent()** API to track all kinds of events. This API provid
 **data** - Any type of data in JSON format.
 
 ```js
-import { trackCustomEvent } from '@convivainc/conviva-js-appanalytics';
+import { trackCustomEvent } from '@convivainc/conviva-js-agent-tracker';
 
 let customData = {
 	identifier1: 'test',
@@ -135,7 +135,7 @@ Custom Tags are global tags applied to all events and persist throughout the app
 **Set the custom tags:**
 
 ```js
-import { setCustomTags } from '@convivainc/conviva-js-appanalytics';
+import { setCustomTags } from '@convivainc/conviva-js-agent-tracker';
 
 let customTagsData = { tagKey1: 'tagValue1', tagKey2: 1, tagKey3: true };
 setCustomTags(customTagsData);
@@ -144,7 +144,7 @@ setCustomTags(customTagsData);
 **Clear previously set custom tags:**
 
 ```js
-import { unsetCustomTags } from '@convivainc/conviva-js-appanalytics';
+import { unsetCustomTags } from '@convivainc/conviva-js-agent-tracker';
 
 // Remove custom tags tagKey2 & tagKey3
 let customTagsData = ['tagKey2', 'tagKey3'];
@@ -159,7 +159,7 @@ unsetCustomTags(customTagsData);
 Uncaught exceptions and unhandled rejections are automatically collected and enabled by default. To report caught exceptions or other errors, use the following API:
 
 ```js
-import { trackError } from '@convivainc/conviva-js-appanalytics';
+import { trackError } from '@convivainc/conviva-js-agent-tracker';
 
 try {
 	//...
@@ -195,7 +195,7 @@ Use Cases:
 import {
 	convivaAppTracker,
 	getClientId,
-} from '@convivainc/conviva-js-appanalytics';
+} from '@convivainc/conviva-js-agent-tracker';
 
 convivaAppTracker({
 	appId: 'YOUR_APP_NAME_AS_STRING',
@@ -213,7 +213,7 @@ clientId = getClientId();
 import {
 	convivaAppTracker,
 	getClientId,
-} from '@convivainc/conviva-js-appanalytics';
+} from '@convivainc/conviva-js-agent-tracker';
 
 // Always call setClientId() before initializing convivaAppTracker() to set a specific clientId
 setClientId(clientId);
@@ -295,7 +295,7 @@ Conviva automatically collects deviceMetadata for Web apps and mobile browsers. 
 import {
 	convivaAppTracker,
 	ConvivaDeviceMetadata,
-} from '@convivainc/conviva-js-appanalytics';
+} from '@convivainc/conviva-js-agent-tracker';
 
 const deviceMetadata: ConvivaDeviceMetadata = {
 	DeviceBrand: 'Samsung',
