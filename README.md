@@ -391,12 +391,14 @@ Conviva automatically collects rich set of app performance metrics through app e
 | Largest Contentful Paint | Timing information about the largest image or text paint before user input on a web page.                                               |
 | First App Launch         | First time launch in the browser. Custom Tag Context.                                                                                   |
 | page_loaded              | On `"load"` event listener.Used to compute Page Loads, Avg Document Load Time, Avg DNS Lookup Time, Avg Document Response Time metrics. |
+| sse_conversation_message | When a Server-Sent Event (SSE) of type conversation_message is received via Fetch eventstream. |
 
 To learn about the default metrics for analyzing the native and web applications performance, such as App Crashes, Avg Screen Load Time, and Page Loads, refer to the [App Experience Metrics](https://pulse.conviva.com/learning-center/content/eco/eco_metrics.html) page in the Learning Center.
 
 </details>
 
-### Auto-collection of SSE Events (EventStream via Fetch API)
+<details>
+<summary><b>Auto-collection of SSE Events (EventStream via Fetch API)</b></summary>
 
 The Conviva JavaScript Agent SDK supports auto-collection of Server-Sent Events (SSE) when they are delivered as an `eventstream` response via the Fetch API. This enables tracking of real-time server-push events in modern web applications.
 
@@ -405,6 +407,8 @@ The Conviva JavaScript Agent SDK supports auto-collection of Server-Sent Events 
   - Additional SSE event types may be supported in future releases.
 
 No extra configuration is required—if your application receives SSEs as an `eventstream` through Fetch, supported events will be tracked automatically.
+
+</details>
 
 ### Limitations
 
