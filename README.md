@@ -76,6 +76,29 @@ trackPageView({ title: 'Custom Page Title' });
 
 After steps 1–4, verify [auto-collected events](#auto-collected-events) in the [validation dashboard](https://pulse.conviva.com/app/appmanager/ecoIntegration/validation) . (_Conviva login required_)
 
+### 5. Cleanup API
+
+The `cleanup()` API is used to completely remove all Conviva tracker listeners, timers, and resources from the current page. This is useful for single-page applications (SPAs) or when you need to fully reset or remove the tracker instance (for example, during logout, navigation, or teardown).
+
+**What does cleanup do?**
+- Removes all event listeners (network, click, visibility, etc.)
+- Clears all timers and intervals used by the tracker
+- Disables error and click tracking
+- Cleans up network request tracking
+- Resets internal tracker state and removes the tracker instance
+
+**Usage Example:**
+
+```js
+import { cleanup } from '@convivainc/conviva-js-appanalytics';
+
+// Remove all Conviva tracker listeners and resources
+cleanup();
+```
+
+> **Note:**
+> The `cleanup` API is not supported in older browsers (Chrome < 66, Mozilla < 57, Safari < 12.1).
+
 ## More Features
 
 <details>
