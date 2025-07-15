@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.15 (11/JUL/2024)
+## 1.1.15 (15/JUL/2024)
 * Supports auto-collection of Server-Sent Events (SSE) for chat/conversation streams (e.g., conversation_message events).
 * Added support for saving clientId in cookies to enable sharing across subdomains (subdomain use cases).
 
