@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.0 (15/JUL/2024)
+## 1.2.0 (17/JUL/2024)
 * Supports auto-collection of Server-Sent Events (SSE) for chat/conversation streams (e.g., CONVERSATION_MESSAGE events).
 * Added support for saving clientId in cookies to enable sharing across subdomains (subdomain use cases).
 * Added support for tracking the first token event (conviva_sse_first_token_event) and arbitrary extra SSE events via config (extraEvents such as CONVERSATION_CLOSE_CONVERSATION, CONVERSATION_PARTICIPANT_CHANGED).
