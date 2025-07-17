@@ -198,14 +198,14 @@ try {
 <details>
 <summary><b>Client ID Synchronization</b></summary>
 
-When using multiple Conviva JavaScript Agent SDK instances across different environments (e.g., subdomains of the same customer or mobile apps embedding webviews), the Client ID may not be shared automatically. To ensure consistency, the SDK provides the following advanced APIs for manual synchronization. These APIs are intended for developers who require fine-grained control over Client ID management across multiple instances.
+When using multiple Conviva JavaScript Agent SDK instances across different environments (e.g., subdomains of the same root domain), the Client ID will be shared automatically using **local storage** & **cookies** 
 
+To ensure consistency, the SDK provides the following advanced APIs for manual synchronization. These APIs are intended for developers who require fine-grained control over Client ID management across multiple instances.
 Use Cases:
 
 - Synchronizing Client ID between a mobile app and WebView.
-- Synchronizing Client ID across subdomains.
 
-**Note**: The Conviva JavaScript Agent SDK utilizes **local storage** to cache some data.
+**Note**: The Conviva JavaScript Agent SDK utilizes **local storage** & **cookies** to cache some data.
 
 - `getClientId()` – Retrieves the current Client ID
 - `setClientId(clientId)` – Sets a specific Client ID
