@@ -1,7 +1,7 @@
 {
   "name": "@convivainc/conviva-js-agent-tracker",
-  "version": "1.1.15",
-  "description": "Conviva DPI Sensor library",
+  "version": "1.2.0",
+  "description": "Conviva JavaScript Agent SDK to auto-collect events and track application-specific events and state changes.",
   "main": "conviva-js-appanalytics.js",
   "dependencies": {
     "@convivainc/browser-tracker-core": "1.1.10",
@@ -9,17 +9,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+github.com:Conviva/conviva-js-appanalytics.git"
+    "url": "git@github.com:Conviva/conviva-js-agent-tracker.git"
   },
   "keywords": [
     "Conviva",
     "Application",
-    "Analytics"
+    "Analytics",
+    "Agent",
+    "Tracker",
+    "agent",
+    "conviva",
+    "tracker",
+    "analytics",
+    "event",
+    "sse",
+    "conversation",
+    "conviva-js-agent-tracker"
   ],
   "author": "Conviva Inc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Conviva/conviva-js-appanalytics/issues"
+    "url": "https://github.com/Conviva/conviva-js-agent-tracker/issues"
   },
-  "homepage": "https://github.com/Conviva/conviva-js-appanalytics#readme"
+  "homepage": "https://github.com/Conviva/conviva-js-agent-tracker#readme"
 }

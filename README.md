@@ -1,5 +1,7 @@
 # Conviva JavaScript Agent SDK
 
+[![npm version](https://img.shields.io/npm/v/@convivainc/conviva-js-agent-tracker.svg)](https://www.npmjs.com/package/@convivainc/conviva-js-agent-tracker)
+
 Use Conviva JavaScript Agent SDK to auto-collect events and track application-specific events and state changes.
 
 **Table of Contents**
