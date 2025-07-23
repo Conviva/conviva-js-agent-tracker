@@ -440,7 +440,7 @@ No extra configuration is required—if your application receives SSEs as an `ev
 The Conviva JavaScript Agent SDK supports auto-collection of WebSocket events for real-time communication tracking. This enables comprehensive monitoring of WebSocket connections, messages, and errors in modern web applications.
 
 - **Current Coverage:**
-  - **Connection Events**: WebSocket open and close events with connection details (URL, status codes, reasons).
+  - **Connection Events**: WebSocket open and close events with connection details (URL, codes, reasons).
   - **Message Events**: Both client-sent messages (`conviva_ws_send`) and server-received messages (`conviva_ws_server`).
   - **Error Events**: WebSocket errors with comprehensive error details, network information, and browser context.
 
