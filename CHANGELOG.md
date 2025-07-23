@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.2 (23/JUL/2025)
+* Added WebSocket message stream tracking with comprehensive event monitoring (open, close, send, message, error).
+
 ## 1.2.0 (17/JUL/2024)
 * Supports auto-collection of Server-Sent Events (SSE) for chat/conversation streams (e.g., CONVERSATION_MESSAGE events).
 * Added support for saving clientId in cookies to enable sharing across subdomains (subdomain use cases).
