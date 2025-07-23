@@ -413,6 +413,7 @@ Conviva automatically collects rich set of app performance metrics through app e
 | First App Launch         | First time launch in the browser. Custom Tag Context.                                                                                   |
 | page_loaded              | On `"load"` event listener.Used to compute Page Loads, Avg Document Load Time, Avg DNS Lookup Time, Avg Document Response Time metrics. |
 | sse_conversation_message | When a Server-Sent Event (SSE) of type conversation_message is received via Fetch eventstream. |
+| websocket_events | When WebSocket events occur (open, close, send, receive, error) for real-time communication tracking. |
 
 To learn about the default metrics for analyzing the native and web applications performance, such as App Crashes, Avg Screen Load Time, and Page Loads, refer to the [App Experience Metrics](https://pulse.conviva.com/learning-center/content/eco/eco_metrics.html) page in the Learning Center.
 
@@ -424,10 +425,33 @@ To learn about the default metrics for analyzing the native and web applications
 The Conviva JavaScript Agent SDK supports auto-collection of Server-Sent Events (SSE) when they are delivered as an `eventstream` response via the Fetch API. This enables tracking of real-time server-push events in modern web applications.
 
 - **Current Coverage:**
-  - At present, only events of type `conversation_message` are automatically collected and tracked.
-  - Additional SSE event types may be supported in future releases.
+  - Primary events of type `CONVERSATION_MESSAGE` are automatically collected and tracked.
+  - First token events (`CONVERSATION_STREAMING_TOKEN`) are tracked when chat begins.
+  - Added support to count Tokens shared between start and end of chat.
+  - Extra events can be configured via `extraEvents` array (e.g., `CONVERSATION_CLOSE_CONVERSATION`, `CONVERSATION_PARTICIPANT_CHANGED`).
 
 No extra configuration is required—if your application receives SSEs as an `eventstream` through Fetch, supported events will be tracked automatically.
+
+</details>
+
+<details>
+<summary><b>Auto-collection of WebSocket Events</b></summary>
+
+The Conviva JavaScript Agent SDK supports auto-collection of WebSocket events for real-time communication tracking. This enables comprehensive monitoring of WebSocket connections, messages, and errors in modern web applications.
+
+- **Current Coverage:**
+  - **Connection Events**: WebSocket open and close events with connection details (URL, status codes, reasons).
+  - **Message Events**: Both client-sent messages (`conviva_ws_send`) and server-received messages (`conviva_ws_server`).
+  - **Error Events**: WebSocket errors with comprehensive error details, network information, and browser context.
+
+- **Event Details:**
+  - `conviva_ws_open`: Tracks when WebSocket connections are established
+  - `conviva_ws_close`: Tracks connection closures with status codes and reasons
+  - `conviva_ws_send`: Tracks outgoing messages with URL and message data
+  - `conviva_ws_server`: Tracks incoming server messages with URL and parsed data
+  - `conviva_ws_error`: Tracks errors with detailed error information and network context
+
+No extra configuration is required—if your application uses WebSocket connections, all events will be tracked automatically.
 
 </details>
 
