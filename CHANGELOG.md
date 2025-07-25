@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.2.3 (24/JUL/2025)
+## 1.2.3 (25/JUL/2025)
 * Removed `data.conversationEntry.entryPayload` from SSE event data.
 
 ## 1.2.2 (23/JUL/2025)
