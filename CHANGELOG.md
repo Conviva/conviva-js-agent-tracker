@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.4 (30/JUL/2025)
+* Fixes issue of websocket server event being dropped when data is not proper json.
+
 ## 1.2.3 (25/JUL/2025)
 * Removed `data.conversationEntry.entryPayload` from SSE event data.
 
