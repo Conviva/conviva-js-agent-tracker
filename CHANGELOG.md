@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.3.0 (04/AUG/2025)
+* Introduces Intelligent Collection of SSE & WebSocket events designed to optimize data collection while ensuring flexibility and actionable insights with reduced volume:
+  - Controls volume through Activation rules (Collect or Block).
+  - Controls collection of attributes in SSE / WebSocket message payloads
+  - Supports filtering based on request URL's hostname, path, scheme, and filtering based on attributes in SSE / WebSocket messages.
+* Fixes issue in application's readyState checks that depended XMLHttpRequest.UNSENT, XMLHttpRequest.OPENED, XMLHttpRequest.HEADERS_RECEIVED, XMLHttpRequest.LOADING, XMLHttpRequest.DONE. The fix now intelligently intercepts XHRs without any modifications to original behaviour.
+
 ## 1.2.6 (04/AUG/2025)
 * Fixes issue in application's readyState checks that depended XMLHttpRequest.UNSENT, XMLHttpRequest.OPENED, XMLHttpRequest.HEADERS_RECEIVED, XMLHttpRequest.LOADING, XMLHttpRequest.DONE. The fix now intelligently intercepts XHRs without any modifications to original behaviour.
 
