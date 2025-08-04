@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.2.6 (04/AUG/2025)
+* Fixes issue in application's readyState checks that depended XMLHttpRequest.UNSENT, XMLHttpRequest.OPENED, XMLHttpRequest.HEADERS_RECEIVED, XMLHttpRequest.LOADING, XMLHttpRequest.DONE. The fix now intelligently intercepts XHRs without any modifications to original behaviour.
+
 ## 1.2.4 (30/JUL/2025)
 * Fixes issue of websocket server event being dropped when data is not proper json.
 
