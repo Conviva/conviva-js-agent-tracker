@@ -430,7 +430,7 @@ The Conviva JavaScript Agent SDK supports auto-collection of Server-Sent Events 
   - Added support to count Tokens shared between start and end of chat.
   - Extra events can be configured via `extraEvents` array (e.g., `CONVERSATION_CLOSE_CONVERSATION`, `CONVERSATION_PARTICIPANT_CHANGED`).
 
-No extra configuration is required—if your application receives SSEs as an `eventstream` through Fetch, supported events will be tracked automatically.
+No extra configuration is required—if your application receives SSEs as an `eventstream` through Fetch, supported events will be tracked automatically according to your remote configuration.
 
 </details>
 
@@ -445,13 +445,15 @@ The Conviva JavaScript Agent SDK supports auto-collection of WebSocket events fo
   - **Error Events**: WebSocket errors with comprehensive error details, network information, and browser context.
 
 - **Event Details:**
-  - `conviva_ws_open`: Tracks when WebSocket connections are established
-  - `conviva_ws_close`: Tracks connection closures with status codes and reasons
-  - `conviva_ws_send`: Tracks outgoing messages with URL and message data
-  - `conviva_ws_server`: Tracks incoming server messages with URL and parsed data
-  - `conviva_ws_error`: Tracks errors with detailed error information and network context
+	- All WebSocket activity is emitted as a single event name: `conviva_ws_message`.
+  - The specific WebSocket phase is provided via the `event` attribute with one of: `open`, `close`, `send`, `server`, `error`.
+  - `open`: Tracks when WebSocket connections are established
+  - `close`: Tracks connection closures with status codes and reasons
+  - `send`: Tracks outgoing messages with URL and message data
+  - `server`: Tracks incoming server messages with URL and parsed data
+  - `error`: Tracks errors with detailed error information and network context
 
-No extra configuration is required—if your application uses WebSocket connections, all events will be tracked automatically.
+No extra configuration is required—if your application uses WebSocket connections, events will be tracked automatically according to your remote configuration.
 
 </details>
 
