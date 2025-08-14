@@ -2,7 +2,7 @@
 
 ## 1.3.1 (14/AUG/2025)
 * Optimised Websocket stream tracking to make it indepenedent of Websocket instance creation.
-* Fixes issue window undefined when initialising our tracker inside _document.js file, which runs on server side for Next.js
+* Fixes issue window undefined when initialising our tracker inside server side app.
 
 ## 1.3.0 (04/AUG/2025)
 * Introduces Intelligent Collection of SSE & WebSocket events designed to optimize data collection while ensuring flexibility and actionable insights with reduced volume:
