@@ -1,13 +1,7 @@
 # Changelog
 
 ## 1.3.2 (19/AUG/2025)
-* Introduces Intelligent Collection of SSE & WebSocket events designed to optimize data collection while ensuring flexibility and actionable insights with reduced volume:
-  - Controls volume through Activation rules (Collect or Block).
-  - Controls collection of attributes in SSE / WebSocket message payloads
-  - Supports filtering based on request URL's hostname, path, scheme, and filtering based on attributes in SSE / WebSocket messages.
-* Supports cookie support for sharing clId within subdomains based on config `enableClIdInCookies` passed in tracker init. 
-* Fixes issue in application's readyState checks that depended XMLHttpRequest.UNSENT, XMLHttpRequest.OPENED, XMLHttpRequest.HEADERS_RECEIVED, XMLHttpRequest.LOADING, XMLHttpRequest.DONE. The fix now intelligently intercepts XHRs without any modifications to original behaviour.
-* Fixes issue window undefined when initialising our tracker inside server side app.
+* Optimises cookie support for sharing clId within subdomains based on config `enableClIdInCookies` passed in tracker init. Read more: [More Features -> Client ID Synchronization -> Auto sync Client ID using cookie](https://github.com/Conviva/conviva-js-agent-tracker?tab=readme-ov-file#more-features).
 
 ## 1.3.1 (14/AUG/2025)
 * Optimised Websocket stream tracking to make it indepenedent of Websocket instance creation.
