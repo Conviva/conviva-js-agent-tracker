@@ -412,8 +412,8 @@ Conviva automatically collects rich set of app performance metrics through app e
 | Largest Contentful Paint | Timing information about the largest image or text paint before user input on a web page.                                               |
 | First App Launch         | First time launch in the browser. Custom Tag Context.                                                                                   |
 | page_loaded              | On `"load"` event listener.Used to compute Page Loads, Avg Document Load Time, Avg DNS Lookup Time, Avg Document Response Time metrics. |
-| sse_conversation_message | When a Server-Sent Event (SSE) of type conversation_message is received via Fetch eventstream. |
-| websocket_events | When WebSocket events occur (open, close, send, receive, error) for real-time communication tracking. |
+| Server-Sent Events | Supports Server-Sent Event (SSE) via Fetch eventstream. |
+| WebSocket message stream | When WebSocket events occur (open, close, send, receive, error) for real-time communication tracking. |
 
 To learn about the default metrics for analyzing the native and web applications performance, such as App Crashes, Avg Screen Load Time, and Page Loads, refer to the [App Experience Metrics](https://pulse.conviva.com/learning-center/content/eco/eco_metrics.html) page in the Learning Center.
 
@@ -508,6 +508,11 @@ Collected only when:
 <details>
   <summary><b>Clean up</summary>
 "cleanup" api support is not available in older browsers(Chrome: < 66, Mozila: < 57, Safari: < 12.1)
+</details>
+
+<details>
+  <summary><b>SSE and Websocket</summary>
+    Only supports json payload
 </details>
 
 ## FAQ
