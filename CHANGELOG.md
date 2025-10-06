@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.4.11 (06/OCT/2025)
+* Added plain text chunk message stream tracking with configurable endpoint filtering.
+
 ## 1.3.2 (19/AUG/2025)
 * Optimises cookie support for sharing clId within subdomains based on config `enableClIdInCookies` passed in tracker init. Read more: [More Features -> Client ID Synchronization -> Auto sync Client ID using cookie](https://github.com/Conviva/conviva-js-agent-tracker?tab=readme-ov-file#more-features).
 

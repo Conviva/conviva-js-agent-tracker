@@ -1,11 +1,11 @@
 {
   "name": "@convivainc/conviva-js-agent-tracker",
-  "version": "1.3.2",
+  "version": "1.4.11",
   "description": "Conviva JavaScript Agent SDK to auto-collect events and track application-specific events and state changes.",
   "main": "conviva-js-appanalytics.js",
   "dependencies": {
-    "@convivainc/browser-tracker-core": "1.1.13",
-    "@convivainc/tracker-core": "1.1.11"
+    "@convivainc/browser-tracker-core": "1.1.17",
+    "@convivainc/tracker-core": "1.1.14"
   },
   "repository": {
     "type": "git",
