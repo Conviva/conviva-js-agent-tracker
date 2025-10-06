@@ -1,7 +1,20 @@
 # Changelog
 
-## 1.4.11 (06/OCT/2025)
+## 1.4.12 (06/OCT/2025)
 * Added plain text chunk message stream tracking with configurable endpoint filtering.
+* Introduces Soft Navigation event for Single Page Applications. To enable it, please contact the Conviva Support team. 
+* Fixes issue of loadEventEnd timestamp being 0 (zero) in conviva_window_loaded event.
+* Support for Configuration based inference of Rich content for SSE messages through fetch, event stream and websocket events.
+* Supports event source message stream tracking with comprehensive event monitoring (open, send, message, error).
+* Introduces baggageConfiguration to set conviva client ID & conversation Id into baggage header for agent backend propogation.
+* Supports for Salesforce's lazy loaded agent detection.
+* Due to lazy load of ui, overlap was persisting in replay. This has been fixed. Now there will be no persisting overlaps.
+* Fix for blobs upload with no payload.
+* Fix issue of not collecting request body(rqb) attributes when request object instance is passed to fetch api instead of raw json body.
+* Introduces Cohort Replay
+  - Cohort Replay enables the visual reconstruction and review of user navigations and actions within a customer's app. This feature captures how users interact with the app, including clicks, navigation, scrolling, media engagement, and text input, and then replays these interactions in a video-like experience.
+
+  NOTE: By default, Cohort Replay is disabled. To enable it, please contact the Conviva Support team.
 
 ## 1.3.2 (19/AUG/2025)
 * Optimises cookie support for sharing clId within subdomains based on config `enableClIdInCookies` passed in tracker init. Read more: [More Features -> Client ID Synchronization -> Auto sync Client ID using cookie](https://github.com/Conviva/conviva-js-agent-tracker?tab=readme-ov-file#more-features).
